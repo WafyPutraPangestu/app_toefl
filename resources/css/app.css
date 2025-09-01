@@ -1,0 +1,497 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Font Family */
+    --font-sans: "Inter", "Instrument Sans", ui-sans-serif, system-ui,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular,
+        "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+    /* TOEFL Brand Colors */
+    --color-primary: #2563eb; /* Blue 600 */
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary-950: #172554;
+
+    /* Secondary Colors */
+    --color-secondary: #7c3aed; /* Violet 600 */
+    --color-secondary-50: #f5f3ff;
+    --color-secondary-100: #ede9fe;
+    --color-secondary-200: #ddd6fe;
+    --color-secondary-300: #c4b5fd;
+    --color-secondary-400: #a78bfa;
+    --color-secondary-500: #8b5cf6;
+    --color-secondary-600: #7c3aed;
+    --color-secondary-700: #6d28d9;
+    --color-secondary-800: #5b21b6;
+    --color-secondary-900: #4c1d95;
+    --color-secondary-950: #2e1065;
+
+    /* Accent Colors */
+    --color-accent: #059669; /* Emerald 600 */
+    --color-accent-50: #ecfdf5;
+    --color-accent-100: #d1fae5;
+    --color-accent-200: #a7f3d0;
+    --color-accent-300: #6ee7b7;
+    --color-accent-400: #34d399;
+    --color-accent-500: #10b981;
+    --color-accent-600: #059669;
+    --color-accent-700: #047857;
+    --color-accent-800: #065f46;
+    --color-accent-900: #064e3b;
+    --color-accent-950: #022c22;
+
+    /* Warning & Error Colors */
+    --color-warning: #d97706; /* Amber 600 */
+    --color-warning-50: #fffbeb;
+    --color-warning-100: #fef3c7;
+    --color-warning-200: #fde68a;
+    --color-warning-300: #fcd34d;
+    --color-warning-400: #fbbf24;
+    --color-warning-500: #f59e0b;
+    --color-warning-600: #d97706;
+    --color-warning-700: #b45309;
+    --color-warning-800: #92400e;
+    --color-warning-900: #78350f;
+    --color-warning-950: #451a03;
+
+    --color-danger: #dc2626; /* Red 600 */
+    --color-danger-50: #fef2f2;
+    --color-danger-100: #fee2e2;
+    --color-danger-200: #fecaca;
+    --color-danger-300: #fca5a5;
+    --color-danger-400: #f87171;
+    --color-danger-500: #ef4444;
+    --color-danger-600: #dc2626;
+    --color-danger-700: #b91c1c;
+    --color-danger-800: #991b1b;
+    --color-danger-900: #7f1d1d;
+    --color-danger-950: #450a0a;
+
+    /* Neutral Colors (Dark Mode Optimized) */
+    --color-neutral-50: #fafafa;
+    --color-neutral-100: #f5f5f5;
+    --color-neutral-200: #e5e5e5;
+    --color-neutral-300: #d4d4d4;
+    --color-neutral-400: #a3a3a3;
+    --color-neutral-500: #737373;
+    --color-neutral-600: #525252;
+    --color-neutral-700: #404040;
+    --color-neutral-800: #262626;
+    --color-neutral-900: #171717;
+    --color-neutral-950: #0a0a0a;
+
+    /* Background Colors */
+    --color-background: #ffffff;
+    --color-background-secondary: #f8fafc;
+    --color-background-tertiary: #f1f5f9;
+    --color-surface: #ffffff;
+    --color-surface-secondary: #f8fafc;
+
+    /* Dark Mode Backgrounds */
+    --color-background-dark: #0f172a;
+    --color-background-secondary-dark: #1e293b;
+    --color-background-tertiary-dark: #334155;
+    --color-surface-dark: #1e293b;
+    --color-surface-secondary-dark: #334155;
+
+    /* Border & Divider Colors */
+    --color-border: #e2e8f0;
+    --color-border-secondary: #cbd5e1;
+    --color-divider: #f1f5f9;
+
+    /* Dark Mode Borders */
+    --color-border-dark: #334155;
+    --color-border-secondary-dark: #475569;
+    --color-divider-dark: #1e293b;
+
+    /* Text Colors */
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-tertiary: #64748b;
+    --color-text-muted: #94a3b8;
+
+    /* Dark Mode Text */
+    --color-text-primary-dark: #f8fafc;
+    --color-text-secondary-dark: #cbd5e1;
+    --color-text-tertiary-dark: #94a3b8;
+    --color-text-muted-dark: #64748b;
+
+    /* Shadow Colors */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+    /* Mobile Optimized Shadows */
+    --shadow-mobile: 0 4px 12px rgb(0 0 0 / 0.08);
+    --shadow-mobile-lg: 0 8px 24px rgb(0 0 0 / 0.12);
+
+    /* Spacing Scale (Mobile First) */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 0.75rem; /* 12px */
+    --spacing-lg: 1rem; /* 16px */
+    --spacing-xl: 1.25rem; /* 20px */
+    --spacing-2xl: 1.5rem; /* 24px */
+    --spacing-3xl: 2rem; /* 32px */
+    --spacing-4xl: 2.5rem; /* 40px */
+
+    /* Border Radius */
+    --radius-sm: 0.25rem; /* 4px */
+    --radius-md: 0.375rem; /* 6px */
+    --radius-lg: 0.5rem; /* 8px */
+    --radius-xl: 0.75rem; /* 12px */
+    --radius-2xl: 1rem; /* 16px */
+    --radius-full: 9999px;
+
+    /* Animation Durations */
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --duration-slower: 500ms;
+
+    /* Animation Easings */
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Mobile Breakpoints */
+    --breakpoint-xs: 320px;
+    --breakpoint-sm: 375px;
+    --breakpoint-md: 414px;
+    --breakpoint-lg: 768px;
+    --breakpoint-xl: 1024px;
+
+    /* Z-Index Scale */
+    --z-dropdown: 10;
+    --z-sticky: 20;
+    --z-fixed: 30;
+    --z-modal-backdrop: 40;
+    --z-modal: 50;
+    --z-popover: 60;
+    --z-tooltip: 70;
+    --z-toast: 80;
+    --z-max: 9999;
+
+    /* Custom Properties for TOEFL App */
+    --quiz-timer-height: 4rem;
+    --question-card-min-height: 20rem;
+    --answer-option-height: 3rem;
+    --bottom-nav-height: 4rem;
+    --header-height: 3.5rem;
+
+    /* Audio Player Specific */
+    --audio-player-height: 5rem;
+    --audio-controls-size: 3rem;
+
+    /* Reading Section Specific */
+    --reading-passage-max-width: 42rem;
+    --reading-line-height: 1.75;
+}
+
+/* Custom Utilities for TOEFL App */
+@layer utilities {
+    /* Mobile First Responsive Text */
+    .text-mobile-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+    .text-mobile-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    .text-mobile-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .text-mobile-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+    .text-mobile-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    .text-mobile-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    /* Interactive Elements - FIXED VERSION */
+    .touch-manipulation {
+        touch-action: manipulation;
+    }
+
+    /* Additional Mobile Utilities */
+    .-webkit-appearance-none {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .scroll-smooth {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Backdrop Blur Support */
+    .backdrop-blur-none {
+        backdrop-filter: blur(0);
+    }
+    .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+    }
+    .backdrop-blur {
+        backdrop-filter: blur(8px);
+    }
+    .backdrop-blur-md {
+        backdrop-filter: blur(12px);
+    }
+    .backdrop-blur-lg {
+        backdrop-filter: blur(16px);
+    }
+    .backdrop-blur-xl {
+        backdrop-filter: blur(24px);
+    }
+    .backdrop-blur-2xl {
+        backdrop-filter: blur(40px);
+    }
+    .backdrop-blur-3xl {
+        backdrop-filter: blur(64px);
+    }
+
+    /* Quiz Specific Utilities */
+    .quiz-container {
+        min-height: calc(
+            100vh - var(--header-height) - var(--bottom-nav-height)
+        );
+    }
+
+    .question-card {
+        min-height: var(--question-card-min-height);
+    }
+
+    .answer-option {
+        min-height: var(--answer-option-height);
+    }
+
+    .timer-bar {
+        height: var(--quiz-timer-height);
+    }
+
+    /* Audio Player Utilities */
+    .audio-player {
+        height: var(--audio-player-height);
+    }
+
+    .audio-control {
+        width: var(--audio-controls-size);
+        height: var(--audio-controls-size);
+    }
+
+    /* Reading Section Utilities */
+    .reading-passage {
+        max-width: var(--reading-passage-max-width);
+        line-height: var(--reading-line-height);
+    }
+
+    /* Safe Area Utilities for Notched Devices */
+    .safe-top {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .safe-left {
+        padding-left: env(safe-area-inset-left);
+    }
+
+    .safe-right {
+        padding-right: env(safe-area-inset-right);
+    }
+
+    /* Focus States for Accessibility - REMOVED FROM @layer utilities */
+
+    /* Animation Utilities */
+    .animate-fade-in {
+        animation: fadeIn var(--duration-normal) var(--ease-out) forwards;
+    }
+
+    .animate-slide-up {
+        animation: slideUp var(--duration-normal) var(--ease-out) forwards;
+    }
+
+    .animate-bounce-in {
+        animation: bounceIn var(--duration-slow) var(--ease-bounce) forwards;
+    }
+
+    /* Gradient Utilities */
+    .gradient-primary {
+        background: linear-gradient(
+            135deg,
+            var(--color-primary-500),
+            var(--color-primary-700)
+        );
+    }
+
+    .gradient-success {
+        background: linear-gradient(
+            135deg,
+            var(--color-accent-500),
+            var(--color-accent-700)
+        );
+    }
+
+    .gradient-warning {
+        background: linear-gradient(
+            135deg,
+            var(--color-warning-500),
+            var(--color-warning-700)
+        );
+    }
+
+    .gradient-danger {
+        background: linear-gradient(
+            135deg,
+            var(--color-danger-500),
+            var(--color-danger-700)
+        );
+    }
+
+    /* Card Utilities */
+    .card-mobile {
+        @apply bg-white rounded-xl shadow-mobile border border-neutral-200;
+    }
+
+    .card-mobile-lg {
+        @apply bg-white rounded-2xl shadow-mobile-lg border border-neutral-200;
+    }
+
+    /* Button Utilities - FULLY FIXED VERSION */
+    .btn-mobile {
+        @apply px-4 py-2.5 rounded-lg font-medium text-sm touch-manipulation select-none transition-all duration-200;
+    }
+
+    .btn-mobile-lg {
+        @apply px-6 py-3 rounded-xl font-semibold text-base touch-manipulation select-none transition-all duration-200;
+    }
+
+    /* Progress Bar Utilities */
+    .progress-smooth {
+        transition: width var(--duration-slow) var(--ease-out);
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* FIXED: Custom tap highlight utility outside @layer */
+.tap-highlight-none {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/* Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+    @theme {
+        --color-background: var(--color-background-dark);
+        --color-background-secondary: var(--color-background-secondary-dark);
+        --color-background-tertiary: var(--color-background-tertiary-dark);
+        --color-surface: var(--color-surface-dark);
+        --color-surface-secondary: var(--color-surface-secondary-dark);
+        --color-border: var(--color-border-dark);
+        --color-border-secondary: var(--color-border-secondary-dark);
+        --color-divider: var(--color-divider-dark);
+        --color-text-primary: var(--color-text-primary-dark);
+        --color-text-secondary: var(--color-text-secondary-dark);
+        --color-text-tertiary: var(--color-text-tertiary-dark);
+        --color-text-muted: var(--color-text-muted-dark);
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* Dark Mode Styles */
+.dark body {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-primary-dark);
+}
+
+.dark .card-mobile,
+.dark .card-mobile-lg {
+    @apply bg-neutral-800 border-neutral-700;
+}
+
+/* Pastikan variabel dark mode diterapkan */
+.dark {
+    --color-background: var(--color-background-dark);
+    --color-surface: var(--color-surface-dark);
+    --color-text-primary: var(--color-text-primary-dark);
+    --color-border: var(--color-border-dark);
+}
