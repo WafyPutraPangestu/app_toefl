@@ -17,7 +17,28 @@ Route::middleware(['admin'])->group(function () {
   Route::get('/questions/template', [QuestionController::class, 'downloadTemplate'])->name('questions.downloadTemplate');
   Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
   Route::resource('test-packages', TestPackageController::class);
+// Audio management routes (untuk digunakan dengan AJAX)
+Route::prefix('questions')->name('questions.')->group(function () {
+  // Get daftar file audio (AJAX)
+  Route::get('/audio-files', [QuestionController::class, 'getAudioFiles'])
+      ->name('audio.files');
+  
+  // Upload audio batch (AJAX)
+  Route::post('/audio-upload', [QuestionController::class, 'uploadAudioBatch'])
+      ->name('audio.upload');
+  
+  // Delete audio file (AJAX)
+  Route::delete('/audio-delete', [QuestionController::class, 'deleteAudioFile'])
+      ->name('audio.delete');
+  
+  // Cleanup unused audio files (AJAX)
+  Route::post('/audio-cleanup', [QuestionController::class, 'cleanupAudioFiles'])
+      ->name('audio.cleanup');
+});
+
   Route::resource('questions', QuestionController::class);
+   
+
   Route::post('/questions/import', [QuestionController::class, 'importStore'])->name('questions.import.store');
   // download template
 

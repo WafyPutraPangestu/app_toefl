@@ -20,7 +20,7 @@
             x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0"
             x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
-            class="max-w-sm w-full bg-white dark:bg-neutral-800 shadow-lg rounded-2xl pointer-events-auto ring-1 ring-black ring-opacity-5 border border-accent-200 dark:border-accent-700">
+            class="max-w-screen-sm w-full bg-white dark:bg-neutral-800 shadow-lg rounded-2xl pointer-events-auto ring-1 ring-black ring-opacity-5 border border-accent-200 dark:border-accent-700">
             <div class="p-4">
                 <div class="flex items-start">
                     <div class="flex-shrink-0">
@@ -33,7 +33,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="ml-3 w-0 flex-1">
+                    <div class="ml-3  flex-1">
                         <p class="text-sm font-medium text-neutral-600 dark:text-neutral-400" x-text="successMessage">
                         </p>
                     </div>
@@ -69,7 +69,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="ml-3 w-0 flex-1">
+                    <div class="ml-3  flex-1">
                         <p class="text-sm font-medium text-neutral-600 dark:text-neutral-400" x-text="errorMessage"></p>
                     </div>
                     <div class="ml-4 flex-shrink-0 flex">
@@ -226,7 +226,7 @@
                             <div class="relative">
                                 <input type="number" name="passing_score" id="passing_score"
                                     value="{{ old('passing_score', $testPackage->passing_score) }}" min="0"
-                                    max="100" required
+                                    max="640" required
                                     class="w-full px-4 py-3 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded-xl text-neutral-600 dark:text-neutral-400 placeholder-neutral-500 dark:placeholder-neutral-400 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 tap-highlight-none @error('passing_score') border-danger-500 focus:ring-danger-500 focus:border-danger-500 @enderror"
                                     placeholder="70">
                                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">

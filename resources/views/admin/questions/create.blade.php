@@ -3,7 +3,7 @@
         <!-- Hero Section dengan Gradient Modern -->
         <div class="relative overflow-hidden">
             <!-- Background Decorative Elements -->
-            <div class="absolute inset-0">
+            <div class="absolute bg-black inset-0">
                 <div class="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
                 <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-400/10 rounded-full blur-3xl"></div>
             </div>
@@ -67,7 +67,7 @@
         </div>
 
         <!-- Main Content -->
-        <div class="px-4 sm:px-6 lg:px-8 -mt-10 relative z-10 pb-20">
+        <div class="px-4 sm:px-6 lg:px-8 mt-10 relative z-10 pb-20">
             <form action="{{ route('questions.store') }}" method="POST" enctype="multipart/form-data"
                 x-data="{ isSubmitting: false }">
                 @csrf

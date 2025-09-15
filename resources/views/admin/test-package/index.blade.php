@@ -15,7 +15,7 @@
             x-transition:enter-end="translate-y-0 opacity-100 sm:translate-x-0"
             x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
-            class="max-w-sm w-full bg-white dark:bg-neutral-800 shadow-lg rounded-2xl pointer-events-auto ring-1 ring-black ring-opacity-5 border border-accent-200 dark:border-accent-700">
+            class=" w-full bg-white dark:bg-neutral-800 shadow-lg rounded-2xl pointer-events-auto ring-1 ring-black ring-opacity-5 border border-accent-200 dark:border-accent-700">
             <div class="p-4">
                 <div class="flex items-start">
                     <div class="flex-shrink-0">
@@ -28,7 +28,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="ml-3 w-0 flex-1">
+                    <div class="ml-3 flex-1">
                         <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100" x-text="successMessage">
                         </p>
                     </div>
@@ -48,7 +48,7 @@
 
     <!-- Main Content -->
     <div class="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-screen-7xl mx-auto">
             <!-- Header Section -->
             <div class="mb-8">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -87,7 +87,7 @@
             @if ($testPackages->isEmpty())
                 <!-- Empty State -->
                 <div class="text-center py-12">
-                    <div class="card-mobile-lg max-w-md mx-auto">
+                    <div class="card-mobile-lg max-w-screen-md mx-auto">
                         <div
                             class="w-20 h-20 bg-neutral-100 dark:bg-neutral-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
                             <svg class="w-10 h-10 text-neutral-400 dark:text-neutral-500" fill="none"
@@ -262,7 +262,7 @@
                                                     <span
                                                         class="text-sm font-semibold text-primary-600 dark:text-primary-400">#{{ $testPackage->id }}</span>
                                                 </div>
-                                                <div class="min-w-0 flex-1">
+                                                <div class=" flex-1">
                                                     <p
                                                         class="text-sm font-semibold text-neutral-900 dark:text-neutral-100 truncate">
                                                         {{ $testPackage->title }}</p>

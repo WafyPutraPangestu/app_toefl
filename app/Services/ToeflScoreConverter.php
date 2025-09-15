@@ -12,154 +12,154 @@ class ToeflScoreConverter
 {
     // Tabel konversi untuk Listening Comprehension (berdasarkan 50 soal standar)
     private $listeningConversionTable = [
-        0 => 24,
-        1 => 25,
-        2 => 26,
-        3 => 27,
-        4 => 28,
-        5 => 29,
-        6 => 30,
-        7 => 31,
-        8 => 32,
-        9 => 32,
-        10 => 33,
-        11 => 35,
-        12 => 37,
-        13 => 37,
-        14 => 38,
-        15 => 41,
-        16 => 41,
-        17 => 42,
-        18 => 43,
-        19 => 44,
-        20 => 45,
-        21 => 45,
-        22 => 46,
-        23 => 47,
-        24 => 47,
-        25 => 48,
-        26 => 48,
-        27 => 49,
-        28 => 50,
-        29 => 51,
-        30 => 51,
-        31 => 52,
-        32 => 52,
-        33 => 53,
-        34 => 54,
-        35 => 54,
-        36 => 55,
-        37 => 56,
-        38 => 57,
-        39 => 58,
-        40 => 59,
-        41 => 60,
-        42 => 61,
-        43 => 62,
-        44 => 63,
-        45 => 65,
-        46 => 66,
-        47 => 67,
-        48 => 67,
+        0 => 31, // Disesuaikan agar skor minimal 310
+        1 => 32, // Nilai setelah ini bisa disesuaikan/dicari dari referensi tabel resmi
+        2 => 32,
+        3 => 33,
+        4 => 35,
+        5 => 37,
+        6 => 37,
+        7 => 38,
+        8 => 39,
+        9 => 41,
+        10 => 41,
+        11 => 42,
+        12 => 43,
+        13 => 44,
+        14 => 45,
+        15 => 45,
+        16 => 46,
+        17 => 47,
+        18 => 47,
+        19 => 48,
+        20 => 48,
+        21 => 49,
+        22 => 50,
+        23 => 50,
+        24 => 51,
+        25 => 51,
+        26 => 52,
+        27 => 52,
+        28 => 53,
+        29 => 54,
+        30 => 54,
+        31 => 55,
+        32 => 56,
+        33 => 57,
+        34 => 57,
+        35 => 58,
+        36 => 59,
+        37 => 60,
+        38 => 61,
+        39 => 62,
+        40 => 63,
+        41 => 65,
+        42 => 66,
+        43 => 67,
+        44 => 67,
+        45 => 68,
+        46 => 68,
+        47 => 68,
+        48 => 68,
         49 => 68,
         50 => 68
     ];
 
     // Tabel konversi untuk Structure & Written Expression (berdasarkan 40 soal standar)
     private $structureConversionTable = [
-        0 => 20,
-        1 => 20,
-        2 => 21,
-        3 => 22,
-        4 => 23,
-        5 => 25,
-        6 => 26,
-        7 => 27,
-        8 => 29,
-        9 => 31,
-        10 => 33,
-        11 => 35,
-        12 => 36,
-        13 => 37,
-        14 => 38,
-        15 => 40,
-        16 => 40,
-        17 => 41,
-        18 => 42,
-        19 => 43,
-        20 => 44,
-        21 => 45,
-        22 => 46,
-        23 => 47,
-        24 => 48,
-        25 => 49,
-        26 => 50,
-        27 => 51,
-        28 => 52,
-        29 => 54,
-        30 => 55,
-        31 => 56,
-        32 => 57,
-        33 => 58,
-        34 => 60,
-        35 => 61,
-        36 => 63,
-        37 => 65,
-        38 => 67,
+        0 => 29, // Disesuaikan agar skor minimal 310
+        1 => 30, // Nilai setelah ini bisa disesuaikan/dicari dari referensi tabel resmi
+        2 => 31,
+        3 => 32,
+        4 => 33,
+        5 => 35,
+        6 => 36,
+        7 => 37,
+        8 => 38,
+        9 => 40,
+        10 => 40,
+        11 => 41,
+        12 => 42,
+        13 => 43,
+        14 => 44,
+        15 => 45,
+        16 => 46,
+        17 => 47,
+        18 => 48,
+        19 => 49,
+        20 => 50,
+        21 => 51,
+        22 => 52,
+        23 => 53,
+        24 => 54,
+        25 => 55,
+        26 => 56,
+        27 => 57,
+        28 => 58,
+        29 => 60,
+        30 => 61,
+        31 => 62,
+        32 => 63,
+        33 => 65,
+        34 => 66,
+        35 => 67,
+        36 => 68,
+        37 => 68,
+        38 => 68,
         39 => 68,
         40 => 68
     ];
 
     // Tabel konversi untuk Reading Comprehension (berdasarkan 50 soal standar)
     private $readingConversionTable = [
-        0 => 21,
-        1 => 22,
-        2 => 23,
-        3 => 24,
-        4 => 25,
-        5 => 26,
-        6 => 27,
-        7 => 28,
-        8 => 29,
-        9 => 30,
-        10 => 31,
-        11 => 32,
-        12 => 34,
-        13 => 35,
-        14 => 36,
-        15 => 37,
-        16 => 38,
-        17 => 39,
-        18 => 40,
-        19 => 41,
-        20 => 42,
-        21 => 43,
-        22 => 43,
-        23 => 44,
-        24 => 45,
-        25 => 46,
-        26 => 47,
-        27 => 48,
-        28 => 48,
-        29 => 49,
-        30 => 50,
-        31 => 51,
-        32 => 52,
-        33 => 52,
-        34 => 53,
-        35 => 54,
-        36 => 54,
-        37 => 55,
-        38 => 56,
-        39 => 57,
-        40 => 58,
-        41 => 59,
-        42 => 60,
-        43 => 61,
-        44 => 62,
-        45 => 63,
-        46 => 65,
-        47 => 66,
+        0 => 33, // Disesuaikan agar skor minimal 310
+        1 => 34, // Nilai setelah ini bisa disesuaikan/dicari dari referensi tabel resmi
+        2 => 35,
+        3 => 36,
+        4 => 37,
+        5 => 38,
+        6 => 39,
+        7 => 40,
+        8 => 41,
+        9 => 42,
+        10 => 43,
+        11 => 43,
+        12 => 44,
+        13 => 45,
+        14 => 46,
+        15 => 46,
+        16 => 47,
+        17 => 48,
+        18 => 48,
+        19 => 49,
+        20 => 50,
+        21 => 50,
+        22 => 51,
+        23 => 52,
+        24 => 52,
+        25 => 53,
+        26 => 54,
+        27 => 54,
+        28 => 55,
+        29 => 56,
+        30 => 56,
+        31 => 57,
+        32 => 58,
+        33 => 59,
+        34 => 60,
+        35 => 61,
+        36 => 62,
+        37 => 63,
+        38 => 64,
+        39 => 65,
+        40 => 66,
+        41 => 67,
+        42 => 67,
+        43 => 67,
+        44 => 67,
+        45 => 67,
+        46 => 67,
+        47 => 67,
         48 => 67,
         49 => 67,
         50 => 67
@@ -167,43 +167,35 @@ class ToeflScoreConverter
 
     /**
      * Method utama untuk menghitung skor.
-     *
-     * @param array $sectionsData Data berisi jumlah benar dan total soal per seksi.
-     * @return array Mengembalikan array berisi skor konversi per seksi dan skor total ITP.
      */
     public function calculate(array $sectionsData): array
     {
         $convertedScores = [];
 
-        // 1. Hitung skor konversi untuk setiap seksi dengan penyesuaian skala
         $convertedScores['listening'] = $this->getScaledConvertedScore(
             $sectionsData['listening']['correct'] ?? 0,
             $sectionsData['listening']['total'] ?? 0,
-            50, // Jumlah soal standar Listening
+            50,
             $this->listeningConversionTable
         );
 
         $convertedScores['structure'] = $this->getScaledConvertedScore(
             $sectionsData['structure']['correct'] ?? 0,
             $sectionsData['structure']['total'] ?? 0,
-            40, // Jumlah soal standar Structure
+            40,
             $this->structureConversionTable
         );
 
         $convertedScores['reading'] = $this->getScaledConvertedScore(
             $sectionsData['reading']['correct'] ?? 0,
             $sectionsData['reading']['total'] ?? 0,
-            50, // Jumlah soal standar Reading
+            50,
             $this->readingConversionTable
         );
 
-        // 2. Jumlahkan semua skor konversi
         $totalConvertedScore = array_sum($convertedScores);
-
-        // 3. Hitung skor akhir menggunakan rumus ITP
         $finalScore = round(($totalConvertedScore * 10) / 3);
 
-        // 4. Siapkan hasil akhir agar kompatibel dengan TestController
         return [
             'score_listening' => $convertedScores['listening'],
             'score_structure' => $convertedScores['structure'],
@@ -214,24 +206,16 @@ class ToeflScoreConverter
 
     /**
      * Helper untuk mendapatkan skor konversi yang sudah disesuaikan (scaled).
-     *
-     * @param int $correctAnswers Jumlah jawaban benar dari tes.
-     * @param int $totalQuestions Jumlah total soal dalam tes.
-     * @param int $standardTotalQuestions Jumlah soal dalam tes ITP standar.
-     * @param array $conversionTable Tabel konversi untuk seksi ini.
-     * @return int Skor konversi.
      */
     private function getScaledConvertedScore(int $correctAnswers, int $totalQuestions, int $standardTotalQuestions, array $conversionTable): int
     {
         if ($totalQuestions == 0) {
-            return 0;
+            // Jika tidak ada soal, maka skor konversinya adalah nilai terendah dari tabel
+            return reset($conversionTable);
         }
 
-        // Hitung proporsi jawaban benar, lalu skalakan ke jumlah soal standar
         $scaledCorrect = round(($correctAnswers / $totalQuestions) * $standardTotalQuestions);
 
-        // Ambil skor dari tabel konversi berdasarkan hasil skala
-        // Jika kunci tidak ada (jarang terjadi), gunakan skor terendah/teratas
         if (!isset($conversionTable[$scaledCorrect])) {
             return $scaledCorrect > 0 ? end($conversionTable) : reset($conversionTable);
         }

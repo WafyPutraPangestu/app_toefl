@@ -33,8 +33,8 @@ $watch('isDark', val => {
 
 <body class="" x-cloak>
 
-    @unless (request()->routeIs('login') || request()->routeIs('register'))
-        {{-- Tombol toggle di navigasi sekarang tidak perlu logika, hanya mengubah state --}}
+    @unless (request()->routeIs('login') || request()->routeIs('register') || request()->routeIs('user.test.show'))
+       
         <x-navigation />
     @endunless
 
